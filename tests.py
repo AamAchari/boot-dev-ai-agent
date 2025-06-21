@@ -1,7 +1,9 @@
 import unittest
 # from functions.get_files_info import get_files_info
-from functions.get_file_content import get_file_content
-from functions.write_file import write_file
+# from functions.get_file_content import get_file_content
+# from functions.write_file import write_file
+from functions.run_python_file import run_python_file
+
 class TestFilesInfo(unittest.TestCase):
     def setUp(self):
         return super().setUp()
@@ -53,22 +55,42 @@ class TestFilesInfo(unittest.TestCase):
     #         print(result)
     #     except Exception as e:
     #         print(e)
-    def test_1_write_file_content(self):
+    # def test_1_write_file_content(self):
+    #     try:
+    #         result = write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum")
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
+    # def test_2_write_file_content(self):
+    #     try:
+    #         result = write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet")
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
+    # def test_3_write_file(self):
+    #     try:
+    #         result = write_file("calculator","/tmp/temp.txt", "this should not be allowed")
+    #         print(result)
+    #     except Exception as e:
+    #         print(e)
+    def test1_run_python_file(self):
         try:
-            result = write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum")
-            print(result)
+            run_python_file("calculator", "main.py")
         except Exception as e:
             print(e)
-    def test_2_write_file_content(self):
+    def test2_run_python_file(self):
         try:
-            result = write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet")
-            print(result)
+            run_python_file("calculator", "tests.py")
         except Exception as e:
             print(e)
-    def test_3_write_file(self):
+    def test3run_python_file(self):
         try:
-            result = write_file("calculator","/tmp/temp.txt", "this should not be allowed")
-            print(result)
+            run_python_file("calculator", "../main.py")
+        except Exception as e:
+            print(e)
+    def test4_run_python_file(self):
+        try:
+            run_python_file("calculator", "nonexistent.py")
         except Exception as e:
             print(e)
 
